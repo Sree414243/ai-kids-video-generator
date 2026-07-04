@@ -1,0 +1,22 @@
+<app-project-toolbar (create)="openDialog()"> </app-project-toolbar>
+
+@if (loading()) {
+  <p>Loading projects...</p>
+} @else {
+  @if (projects().length === 0) {
+    <p>No projects found.</p>
+  } @else {
+    <div class="grid">
+      @for (project of projects(); track project._id) {
+        <app-project-card [project]="project"> </app-project-card>
+      }
+    </div>
+  }
+}
+
+<app-project-form
+  [visible]="dialogVisible()"
+  (close)="closeDialog()"
+  (created)="onProjectCreated($event)"
+>
+</app-project-form>

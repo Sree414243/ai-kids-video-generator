@@ -1,0 +1,16 @@
+<p-card>
+  <ng-template pTemplate="title">
+    {{ project().title }}
+  </ng-template>
+
+  <ng-template pTemplate="content">
+    <p>{{ project().description }}</p>
+
+    <p-tag [value]="project().status" severity="info"> </p-tag>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button pButton label="Open" class="p-button-sm"></button>
+    <button pButton label="Delete" class="p-button-sm p-button-danger"></button>
+  </ng-template>
+</p-card>

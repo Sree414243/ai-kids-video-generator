@@ -1,0 +1,38 @@
+<p-dialog
+  header="Create Project"
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '30vw' }"
+  (onHide)="hide()"
+>
+  <form [formGroup]="form">
+    <div class="field">
+      <input pInputText formControlName="title" placeholder="Project title" />
+    </div>
+
+    <div class="field">
+      <textarea
+        pTextarea
+        formControlName="description"
+        placeholder="Description"
+      >
+      </textarea>
+    </div>
+  </form>
+
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      label="Cancel"
+      class="p-button-text"
+      (click)="hide()"
+    ></button>
+
+    <button
+      pButton
+      label="Create"
+      icon="pi pi-check"
+      (click)="submit()"
+    ></button>
+  </ng-template>
+</p-dialog>
