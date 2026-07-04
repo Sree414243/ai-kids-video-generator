@@ -64,18 +64,16 @@ export class ProjectFormComponent implements OnChanges {
     const payload = this.form.getRawValue();
 
     if (this.project) {
-      this.projectService
-        .updateProject(this.project._id, payload)
-        .subscribe({
-          next: (res) => {
-            this.updated.emit(res as Project);
-            this.message.success('Project Updated Successfully');
-            this.form.reset({ title: '', description: '' });
-          },
-          error: () => {
-            this.message.error('Failed to update project');
-          },
-        });
+      this.projectService.updateProject(this.project._id, payload).subscribe({
+        next: (res) => {
+          this.updated.emit(res as Project);
+          this.message.success('Project Updated Successfully');
+          this.form.reset({ title: '', description: '' });
+        },
+        error: () => {
+          this.message.error('Failed to update project');
+        },
+      });
     } else {
       this.projectService.createProject(payload).subscribe({
         next: (res) => {
