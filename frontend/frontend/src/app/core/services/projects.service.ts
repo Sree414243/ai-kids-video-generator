@@ -20,4 +20,12 @@ export class ProjectService {
   createProject(data: Partial<Project>) {
     return this.http.post<Project>(this.api, data);
   }
+
+  updateProject(id: string, data: any) {
+    return this.http.patch(`${this.api}/${id}`, data);
+  }
+
+  deleteProject(id: string) {
+    return this.http.delete(`${this.api}/${id}`);
+  }
 }

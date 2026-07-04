@@ -13,7 +13,7 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 
 import { routes } from './app.routes';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { ApiErrorInterceptor } from './core/services/core/interceptors/api-error.interceptor';
 
 export const appConfig: ApplicationConfig = {
@@ -37,5 +37,6 @@ export const appConfig: ApplicationConfig = {
       useClass: ApiErrorInterceptor,
       multi: true,
     },
+    ConfirmationService,
   ],
 };

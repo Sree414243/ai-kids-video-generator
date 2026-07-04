@@ -10,7 +10,18 @@
   </ng-template>
 
   <ng-template pTemplate="footer">
-    <button pButton label="Open" class="p-button-sm"></button>
-    <button pButton label="Delete" class="p-button-sm p-button-danger"></button>
+    <button
+      pButton
+      label="Edit"
+      icon="pi pi-pencil"
+      class="p-button-sm"
+      (click)="onEdit()"
+    ></button>
+    <button
+      pButton
+      label="Delete"
+      class="p-button-sm p-button-danger"
+      (click)="onDelete()"
+    ></button>
   </ng-template>
 </p-card>
